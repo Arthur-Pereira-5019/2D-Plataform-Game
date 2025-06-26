@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 548726500}
   - component: {fileID: 548726501}
   - component: {fileID: 548726502}
+  - component: {fileID: 548726503}
   m_Layer: 0
   m_Name: dr_home
   m_TagString: Player
@@ -1617,6 +1618,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!111 &548726503
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548726496}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1001 &635447765
 PrefabInstance:
   m_ObjectHideFlags: 0
