@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sidwalk_2_0: 3283463173837197062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

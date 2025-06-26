@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 03edc4a523f59c6428a1aaa29b8e74a0
+guid: 8d9f2dda6d23b09449b94ed1bdc5bf0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6213118629443927052
-    second: sidwalk_1_0
+      213: -180021445674868022
+    second: tree (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,42 +96,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sidwalk_1_0
+      name: tree (2)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 32
+        width: 21
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f302a8668196c9a0800000000000000
-      internalID: -6213118629443927052
+      spriteID: ac2e89ee27f608df0800000000000000
+      internalID: -180021445674868022
       vertices: []
       indices: 
       edges: []
@@ -156,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      sidwalk_1_0: -6213118629443927052
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
