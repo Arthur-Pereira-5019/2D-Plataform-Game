@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626083059864048403}
   - component: {fileID: 1096049539677416162}
   - component: {fileID: -9005286080555293973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: calcada
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 632289373218846517}
   - component: {fileID: 5588823940509438562}
   - component: {fileID: -6110102852639225911}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: asfalto1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
