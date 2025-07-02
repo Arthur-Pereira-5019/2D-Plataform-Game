@@ -18,7 +18,7 @@ public class Controle : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,20 +54,20 @@ public class Controle : MonoBehaviour
                                        (gameObject.GetComponent<Rigidbody2D>().velocity.y > 0.0f));
 
         // ANIMAÇAO
-        //animator.SetBool("NoChao", noChao);
+        animator.SetBool("NoChao", noChao);
 
         if (moveX != 0)
         {
-            //animator.SetBool("Correndo", true);
+            animator.SetBool("Correndo", true);
         }
         else
         {
-            //animator.SetBool("Correndo", false);
+            animator.SetBool("Correndo", false);
         }
     }
 
     void ataca(){
-        //animator.SetTrigger("Ataque");
+        animator.SetTrigger("Ataque");
     }
 
     void pula(){

@@ -1509,7 +1509,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1712390949, guid: b26d492b8c99c1b45a68976ed8d590d4, type: 3}
+  m_Sprite: {fileID: -2046436717, guid: b26d492b8c99c1b45a68976ed8d590d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2784,7 +2784,6 @@ GameObject:
   - component: {fileID: 900687789}
   - component: {fileID: 900687788}
   - component: {fileID: 900687787}
-  - component: {fileID: 900687790}
   - component: {fileID: 900687791}
   m_Layer: 0
   m_Name: Main Camera
@@ -2867,18 +2866,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &900687790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900687786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de438c0560c6ec41b9b6a28312bbda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &900687791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4888,7 +4875,7 @@ GameObject:
   - component: {fileID: 2122021293}
   - component: {fileID: 2122021292}
   m_Layer: 0
-  m_Name: zombie_attack_0
+  m_Name: dr_zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
