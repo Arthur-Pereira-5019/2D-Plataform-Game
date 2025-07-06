@@ -124,7 +124,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque
@@ -155,7 +155,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Pulo
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4332280747927769147}
@@ -245,7 +245,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Andado
+  - m_Name: Andando
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -348,7 +348,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Pulo
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5204994155023771423}
@@ -376,7 +376,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Parado
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6353012403295622676}
@@ -404,7 +404,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Ataque
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4332280747927769147}
@@ -468,7 +468,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Parado
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Andado
+    m_ConditionEvent: Andando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4332280747927769147}

@@ -6,6 +6,8 @@ public class Controle : MonoBehaviour
 {
 
     public int velocidade = 10;
+
+    public float jumpTime = 10;
     public int forcaDoPulo = 1250;
     public Transform terra;
     public LayerMask chao;
@@ -43,7 +45,9 @@ public class Controle : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && noChao)
         {
-            pula();
+            {
+                StartCoroutine(pula());
+            }
         }
 
         // FÍSICA
@@ -70,8 +74,15 @@ public class Controle : MonoBehaviour
         animator.SetTrigger("Ataque");
     }
 
-    void pula(){
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * forcaDoPulo);
+    IEnumerator pula(){
+        animator.SetTrigger("Pulando");
+        yield return new WaitForSeconds(jumpTime);
+        if (noChao == true && animator.GetBool("Correndo") == false)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * forcaDoPulo);
+            animator.SetBool("Pulando", false);
+        }
+   
     }
 
     void viraJogador()
