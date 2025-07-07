@@ -526,10 +526,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: NoChao
+    m_ConditionEvent: Correndo
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Correndo
+    m_ConditionEvent: NoChao
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5294101527393826710}
@@ -953,9 +953,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Ataque
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: NoChao
     m_EventTreshold: 0

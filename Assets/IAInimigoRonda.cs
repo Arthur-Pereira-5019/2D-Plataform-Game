@@ -23,6 +23,8 @@ public class IAInimigoRonda : MonoBehaviour {
 	public bool loop = true; // volta ao início após último ponto?
     public bool atacando = false;
 
+	public float attackTime = 0.0f;
+
 	private Transform transform;
 	int i = 0;		// indice do vetor pontos
 	float proxTempo;  // tempo do próximo movimento
@@ -54,7 +56,7 @@ public class IAInimigoRonda : MonoBehaviour {
                     seMovendo = true;
                 }
             }
-            if (!atacando){
+            if (!animator.GetBool("Ataque")){
                 movimenta();
             }
 		}
@@ -88,19 +90,26 @@ public class IAInimigoRonda : MonoBehaviour {
 		}
 	}
 
-    void OnTriggerStay2D(Collider2D outro)
+    public void OnTriggerStay2D(Collider2D outro)
     {
         if (outro.gameObject.tag == "Player")
         {
-            ataca();
+			StartCoroutine(ataca());
         }
 	}
 
-    public void ataca()
-    {
-        if (!atacando)
-        {
-            animator.SetTrigger("Ataque");
-        }
+	public void callAttack()
+	{
+		StartCoroutine(ataca());
+	}
+
+    public IEnumerator ataca()
+	{
+		if (!animator.GetBool("Ataque"))
+		{
+			animator.SetBool("Ataque",true);
+			yield return new WaitForSeconds(attackTime);
+			animator.SetBool("Ataque", false);
+		}
 	}
 }

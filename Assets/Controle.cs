@@ -12,6 +12,8 @@ public class Controle : MonoBehaviour
     public Transform terra;
     public LayerMask chao;
 
+    public float attackTime = 0.0f;
+
     private float moveX;
     private bool direita = true;
     private bool noChao;
@@ -41,7 +43,7 @@ public class Controle : MonoBehaviour
         noChao = Physics2D.Linecast(transform.position, terra.position, chao);
         if (Input.GetButtonDown("Fire1"))
         {
-            ataca();
+            StartCoroutine(ataca());
         }
         if (Input.GetButtonDown("Jump") && noChao)
         {
@@ -70,8 +72,11 @@ public class Controle : MonoBehaviour
         }
     }
 
-    void ataca(){
-        animator.SetTrigger("Ataque");
+    public IEnumerator ataca()
+    {
+        animator.SetBool("Ataque", true);
+        yield return new WaitForSeconds(attackTime);
+        animator.SetBool("Ataque", false);
     }
 
     IEnumerator pula(){

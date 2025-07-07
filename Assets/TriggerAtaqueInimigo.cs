@@ -12,7 +12,7 @@ public class TriggerAtaqueInimigo : MonoBehaviour {
 	{
 		if ((outro.tag == tagInimigo ) && (!outro.gameObject.GetComponent<Saude>().morto))
 		{
-			inimigo.GetComponent<IAInimigoRonda> ().ataca ();
+			inimigo.GetComponent<IAInimigoRonda>().callAttack();
 		}
 	}
 
