@@ -8,27 +8,38 @@ public class Controle : MonoBehaviour
     public int velocidade = 10;
 
     public float jumpTime = 10;
+
+    public bool secondWeapon = false;
     public int forcaDoPulo = 1250;
     public Transform terra;
     public LayerMask chao;
 
     public float attackTime = 0.0f;
 
+    public float attackTime2 = 0.0f;
+
     private float moveX;
     private bool direita = true;
     private bool noChao;
     private Animator animator;
 
+    private GameObject manager;
+
     // Use this for initialization
     void Start()
     {
+        manager = GameObject.Find("Manager");
         animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveJogador();
+        if (manager.GetComponent<GameManager>().lifes > 0 || manager.GetComponent<GameManager>().won == false)
+        {
+            moveJogador();
+            }
+        
     }
 
     private void LateUpdate()
@@ -41,13 +52,24 @@ public class Controle : MonoBehaviour
         // CONTROLES
         moveX = Input.GetAxis("Horizontal");
         noChao = Physics2D.Linecast(transform.position, terra.position, chao);
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && animator.GetBool("Ataque") == false && animator.GetBool("Attack2") == false)
         {
-            StartCoroutine(ataca());
+            if (secondWeapon)
+            {
+                animator.SetBool("Idle", false);
+                StartCoroutine(ataca2());
+            }
+            else
+            {
+                animator.SetBool("Idle", false);
+                StartCoroutine(ataca());
+            }
+            
         }
         if (Input.GetButtonDown("Jump") && noChao)
         {
             {
+                animator.SetBool("Idle", false);
                 StartCoroutine(pula());
             }
         }
@@ -65,10 +87,12 @@ public class Controle : MonoBehaviour
         if (moveX != 0)
         {
             animator.SetBool("Correndo", true);
+            animator.SetBool("Idle", false);
         }
         else
         {
             animator.SetBool("Correndo", false);
+            animator.SetBool("Idle", false);
         }
     }
 
@@ -77,7 +101,19 @@ public class Controle : MonoBehaviour
         animator.SetBool("Ataque", true);
         yield return new WaitForSeconds(attackTime);
         animator.SetBool("Ataque", false);
+        
     }
+
+    public IEnumerator ataca2()
+    {
+        animator.SetBool("Attack2", true);
+        yield return new WaitForSeconds(attackTime2);
+        animator.SetBool("Attack2", false);
+        manager.GetComponent<GameManager>().weapon = "Bengala";
+        secondWeapon = false;
+    }
+
+    
 
     IEnumerator pula(){
         animator.SetTrigger("Pulando");

@@ -9,6 +9,8 @@ public class Saude : MonoBehaviour
 
     public bool morto;
     public int saude;
+
+    private int constHealth;
     private Animator animator;
     public float deathTime;
 
@@ -19,6 +21,7 @@ public class Saude : MonoBehaviour
     {
         morto = false;
         animator = gameObject.GetComponent<Animator>();
+        constHealth = saude;
     }
 
     void Update()
@@ -58,7 +61,12 @@ public class Saude : MonoBehaviour
     IEnumerator morre()
     {
         yield return new WaitForSeconds(deathTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        animator.SetBool("Morte", false);
+        GameObject foundObject = GameObject.Find("Manager");
+        foundObject.GetComponent<GameManager>().lifes -= 1;
+        self.transform.position = GameObject.Find("SpawnPoint").GetComponent<Transform>().position;
+        saude = constHealth;
+        animator.SetBool("Idle", true);
     }
     IEnumerator morreInimigo()
     {

@@ -23,11 +23,13 @@ public class VicodinCollider : MonoBehaviour
 
     IEnumerator tomar(Collider2D outro)
     {
+        GameObject foundObject = GameObject.Find("Manager");
         gameObject.GetComponent<Collider2D>().enabled = false;
         outro.gameObject.GetComponent<Animator>().SetBool("Tomando", true);
         outro.gameObject.GetComponent<Saude>().dano(-cura);
         yield return new WaitForSeconds(drinkTime);
         outro.gameObject.GetComponent<Animator>().SetBool("Tomando", false);
+        foundObject.GetComponent<GameManager>().points += 7;
         Destroy(gameObject);
         Debug.Log("C");
     }
