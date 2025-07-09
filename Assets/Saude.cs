@@ -12,6 +12,8 @@ public class Saude : MonoBehaviour
     private Animator animator;
     public float deathTime;
 
+    public GameObject self;
+
     // Use this for initialization
     void Start()
     {
@@ -35,6 +37,10 @@ public class Saude : MonoBehaviour
             {  // Só reicicia a fase se quem morreu foi o jogador.
                 StartCoroutine(morre());
             }
+            else
+            {
+                StartCoroutine(morreInimigo());
+            }
         }
     }
 
@@ -53,5 +59,10 @@ public class Saude : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator morreInimigo()
+    {
+        yield return new WaitForSeconds(deathTime);
+        Destroy(self);
     }
 }
