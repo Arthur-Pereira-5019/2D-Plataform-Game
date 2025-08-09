@@ -107,10 +107,15 @@ public class Controle : MonoBehaviour
     public IEnumerator ataca2()
     {
         animator.SetBool("Attack2", true);
-        yield return new WaitForSeconds(attackTime2);
+        yield return new WaitForSeconds(attackTime2/2);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("house_lantern_attack"))
+        {
+        secondWeapon = false;
+        }
+        yield return new WaitForSeconds(attackTime2/2);
+        
         animator.SetBool("Attack2", false);
         manager.GetComponent<GameManager>().weapon = "Bengala";
-        secondWeapon = false;
     }
 
     

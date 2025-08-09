@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +11,12 @@ public class GameManager : MonoBehaviour
     public int lifes = 3;
     public int points = 0;
 
-    public TextMeshProUGUI score;
+    public TMP_Text score;
+    public TMP_Text finalScore;
 
     public string weapon = "Bengala";
+
+    public int health;
 
     public bool won = false;
 
@@ -26,8 +32,7 @@ public class GameManager : MonoBehaviour
     
     {
         GameObject foundObject = GameObject.Find("Canvas");
-        string arma;
-        score.text = "Pontos: " + points + "\n Arma:" + weapon + "\n Vidas: " + lifes;
+        score.text = "Vida: " + health + "\n Pontos: " + points + "\n Arma: " + weapon + "\n Vidas: " + lifes;
         if (lifes <= 0)
         {
             foundObject.transform.Find("losePanel").gameObject.SetActive(true);
@@ -35,6 +40,7 @@ public class GameManager : MonoBehaviour
         else if (won == true)
         {
             foundObject.transform.Find("winPanel").gameObject.SetActive(true);
+            finalScore.text = "Pontuação Final: " + points;
         }
     }
 }

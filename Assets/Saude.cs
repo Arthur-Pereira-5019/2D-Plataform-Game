@@ -15,6 +15,7 @@ public class Saude : MonoBehaviour
     public float deathTime;
 
     public GameObject self;
+    public GameObject foundObject;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,10 @@ public class Saude : MonoBehaviour
         morto = false;
         animator = gameObject.GetComponent<Animator>();
         constHealth = saude;
+        foundObject = GameObject.Find("Manager");
+        foundObject.GetComponent<GameManager>().health = saude;
+
+
     }
 
     void Update()
@@ -32,6 +37,10 @@ public class Saude : MonoBehaviour
     {
         Debug.Log("Entrei dano");
         saude -= x;
+        if (gameObject.tag == "Player")
+        {
+            foundObject.GetComponent<GameManager>().health = saude;
+        }
         if (saude <= 0)
         {
             morto = true;
@@ -39,6 +48,8 @@ public class Saude : MonoBehaviour
             if (gameObject.tag == "Player")
             {  // Só reicicia a fase se quem morreu foi o jogador.
                 StartCoroutine(morre());
+                
+
             }
             else
             {
@@ -62,14 +73,16 @@ public class Saude : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
         animator.SetBool("Morte", false);
-        GameObject foundObject = GameObject.Find("Manager");
         foundObject.GetComponent<GameManager>().lifes -= 1;
         self.transform.position = GameObject.Find("SpawnPoint").GetComponent<Transform>().position;
         saude = constHealth;
+            foundObject.GetComponent<GameManager>().health = saude;
+
         animator.SetBool("Idle", true);
     }
     IEnumerator morreInimigo()
     {
+        foundObject.GetComponent<GameManager>().points += 5;
         yield return new WaitForSeconds(deathTime);
         Destroy(self);
     }
