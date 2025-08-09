@@ -7,4 +7,4 @@ Despite the small deadline, the results were satisfactory. (I also finished the 
 The game is inspired by the House MD series, where the Player, dr. Home must flee from a horde of zombies, using Vicodin to heal, calculating the right time to do jumps as Home cannot jump with ease and using the flashlight to instakill Zombies with an epilepsy attack.
 
 
-![Logo](images/reademeimage.png)
+![Logo](images/readmeimage.png)
